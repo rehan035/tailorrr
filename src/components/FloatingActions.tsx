@@ -15,10 +15,10 @@ export const FloatingActions: React.FC = () => {
 
   return (
     <>
-      {/* Floating WhatsApp Action Button (Desktop & Tablet) */}
+      {/* Floating WhatsApp Action Button (Desktop & Tablet) - Positioned on opposite side (left) */}
       <aside
         aria-label="Quick contact"
-        className={`fixed bottom-6 right-6 z-40 transition-all duration-300 hidden sm:block ${
+        className={`fixed bottom-6 left-6 z-40 transition-all duration-300 hidden sm:block ${
           showFloating ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
       >
@@ -28,7 +28,7 @@ export const FloatingActions: React.FC = () => {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-3 px-4 py-3 rounded-full bg-[#1b251d] border border-emerald-500/40 text-emerald-400 hover:text-white hover:bg-emerald-600 transition-all shadow-2xl shadow-black/80"
+          className="group flex items-center gap-3 px-4 py-3 rounded-full bg-[#1b251d] border border-emerald-500/40 text-emerald-400 hover:text-white hover:bg-emerald-600 transition-all shadow-2xl shadow-black/80 hover:shadow-emerald-950/50"
           aria-label="Direct WhatsApp Chat with Zafar Brothers"
         >
           <div className="relative">
@@ -36,7 +36,7 @@ export const FloatingActions: React.FC = () => {
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full" />
           </div>
-          <span className="text-xs uppercase tracking-wider font-semibold pr-1">
+          <span className="text-xs uppercase tracking-wider font-semibold pl-0.5 pr-1">
             Chat on WhatsApp
           </span>
         </a>
