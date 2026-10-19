@@ -63,6 +63,12 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="#testimonials" className="hover:text-[#c5a059] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3.5 h-3.5 text-[#c5a059]" />
+                  <span>Client Testimonials</span>
+                </a>
+              </li>
+              <li>
                 <a href="#location" className="hover:text-[#c5a059] transition-colors flex items-center gap-1.5">
                   <ChevronRight className="w-3.5 h-3.5 text-[#c5a059]" />
                   <span>Google Map &amp; Directions</span>

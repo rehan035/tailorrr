@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { ServicesSection } from './components/ServicesSection';
 import { FittingProcess } from './components/FittingProcess';
 import { GallerySection } from './components/GallerySection';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { GoogleMapsSection } from './components/GoogleMapsSection';
 import { ContactSection } from './components/ContactSection';
 import { FloatingActions } from './components/FloatingActions';
@@ -23,6 +24,7 @@ export default function App() {
         <ServicesSection />
         <FittingProcess />
         <GallerySection />
+        <TestimonialsSection />
         <GoogleMapsSection />
         <ContactSection />
       </main>

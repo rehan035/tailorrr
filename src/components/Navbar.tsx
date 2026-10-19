@@ -24,6 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal }) => {
     { label: 'Services', href: '#services' },
     { label: 'Process', href: '#process' },
     { label: 'Gallery', href: '#gallery' },
+    { label: 'Reviews', href: '#testimonials' },
     { label: 'Location', href: '#location' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -46,22 +47,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal }) => {
   return (
     <>
       {/* Top micro bar for quick business reach */}
-      <div className="bg-[#0b0c0f] border-b border-[#232630] text-xs text-[#a3a093] py-2 px-4 sm:px-6 lg:px-8 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
-          <div className="flex items-center gap-2">
+      <div className="bg-[#0b0c0f] border-b border-[#232630] text-xs text-[#a3a093] py-1.5 sm:py-2 px-3 sm:px-6 lg:px-8 transition-colors">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-4">
+          {/* Location row */}
+          <div className="flex items-center gap-1.5 min-w-0">
             <MapPin className="w-3.5 h-3.5 text-[#c5a059] shrink-0" />
-            <span className="truncate text-[#beb9ab] font-medium">{BUSINESS_INFO.addressShort}</span>
+            <span className="truncate text-[11px] sm:text-xs text-[#beb9ab] font-medium leading-none">
+              {BUSINESS_INFO.addressShort}
+            </span>
           </div>
-          <div className="flex items-center gap-4">
+
+          {/* Contact and suiting note row */}
+          <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 min-w-0">
             <a
               href={`tel:${BUSINESS_INFO.phoneClean}`}
-              className="flex items-center gap-1.5 hover:text-[#c5a059] transition-colors"
+              className="flex items-center gap-1.5 hover:text-[#c5a059] transition-colors leading-none"
             >
-              <Phone className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span className="font-semibold tracking-wider text-[#e6d5b0] hover:text-[#c5a059] transition-colors">{BUSINESS_INFO.phone}</span>
+              <Phone className="w-3 h-3 text-[#c5a059] shrink-0" />
+              <span className="font-semibold tracking-wider text-[11px] sm:text-xs text-[#e6d5b0] hover:text-[#c5a059] transition-colors">
+                {BUSINESS_INFO.phone}
+              </span>
             </a>
             <span className="hidden sm:inline text-[#353945]">|</span>
-            <span className="hidden sm:inline text-[#9e9a8d] tracking-wide">Gents Bespoke Tailoring</span>
+            <span className="text-[10px] sm:text-xs text-[#9e9a8d] tracking-wide truncate leading-none">
+              Gents Bespoke Tailoring
+            </span>
           </div>
         </div>
       </div>
@@ -70,26 +80,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal }) => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#101216]/95 backdrop-blur-md shadow-xl shadow-black/40 border-b border-[#232630]/80 py-3.5'
-            : 'bg-[#101216]/80 backdrop-blur-sm border-b border-white/5 py-4'
+            ? 'bg-[#101216]/95 backdrop-blur-md shadow-xl shadow-black/40 border-b border-[#232630]/80 py-2.5 sm:py-3.5'
+            : 'bg-[#101216]/80 backdrop-blur-sm border-b border-white/5 py-3 sm:py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Text-based luxury logo */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+          {/* Text-based luxury logo with scissors and aligned subtitle */}
           <a
             href="#home"
             onClick={(e) => handleLinkClick(e, '#home')}
-            className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5a059] rounded-sm"
+            className="group flex items-center gap-2 sm:gap-2.5 min-w-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5a059] rounded-sm py-0.5"
           >
-            <div className="flex items-center gap-2">
-              <Scissors className="w-4 h-4 text-[#c5a059] transition-transform duration-300 group-hover:rotate-12" />
-              <span className="text-xl sm:text-2xl font-serif font-bold tracking-[0.18em] text-[#faf7f0] uppercase transition-colors group-hover:text-[#c5a059]">
+            <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-[#c5a059] shrink-0 transition-transform duration-300 group-hover:rotate-12" />
+            <div className="flex flex-col min-w-0 justify-center">
+              <span className="text-base sm:text-xl md:text-2xl font-serif font-bold tracking-[0.14em] sm:tracking-[0.18em] text-[#faf7f0] uppercase transition-colors group-hover:text-[#c5a059] leading-tight truncate">
                 ZAFAR BROTHERS
               </span>
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.2em] sm:tracking-[0.28em] text-[#c5a059] uppercase font-sans font-medium transition-colors group-hover:text-[#d8b26e] leading-none mt-0.5 truncate">
+                Gents Tailors • Rawalpindi
+              </span>
             </div>
-            <span className="text-[10px] sm:text-[11px] tracking-[0.28em] text-[#c5a059] uppercase pl-6 font-sans font-medium flex items-center gap-1.5 transition-colors group-hover:text-[#d8b26e]">
-              Gents Tailors • Rawalpindi
-            </span>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -108,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal }) => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             <a
               href={`tel:${BUSINESS_INFO.phoneClean}`}
               className="p-2.5 rounded-full border border-[#2b2e38] text-[#e5e3db] hover:border-[#c5a059] hover:text-[#c5a059] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5a059]"
@@ -131,28 +141,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal }) => {
             </a>
           </div>
 
-          {/* Mobile menu toggle & quick chat */}
-          <div className="flex sm:hidden items-center gap-2.5">
+          {/* Mobile menu toggle & quick chat in a clean, horizontally aligned row */}
+          <div className="flex sm:hidden items-center gap-2 shrink-0">
             <a
               href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(
                 'Hello Zafar Brothers Gents Tailors, I would like to inquire about bespoke tailoring.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#c5a059] to-[#d8b26e] text-[#0d0e11] font-semibold text-[11px] uppercase tracking-wider shadow-md shadow-[#c5a059]/25 hover:brightness-110 active:scale-95 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#c5a059] to-[#d8b26e] text-[#0d0e11] font-semibold text-[11px] uppercase tracking-wider shadow-sm active:scale-95 transition-all h-8 shrink-0"
               aria-label="WhatsApp Us"
             >
-              <MessageSquare className="w-3.5 h-3.5 fill-current" />
+              <MessageSquare className="w-3.5 h-3.5 fill-current shrink-0" />
               <span>Chat</span>
             </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg border border-[#2b2f3d] bg-[#161822]/90 text-[#d4d1c7] hover:text-[#faf7f0] hover:border-[#c5a059]/50 active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5a059]"
+              className="w-8 h-8 rounded-lg border border-[#2b2f3d] bg-[#161822]/90 text-[#d4d1c7] hover:text-[#faf7f0] hover:border-[#c5a059]/50 active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5a059] shrink-0 flex items-center justify-center p-0"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open navigation menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#c5a059]" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4 text-[#c5a059]" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
