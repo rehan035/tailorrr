@@ -1,0 +1,6 @@
+{
+  "name": "Zafar Brothers Gents Tailors",
+  "description": "Premium men's bespoke tailoring, formal suits, alterations, and custom tailoring in Rawalpindi, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
